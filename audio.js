@@ -29,39 +29,47 @@ let data = {
 }
 
 
-let song = new Audio()
-let currentSong = 0
+let  song  = new Audio()
+let  currentSong =  0
 
-window.onload = function (){
-    playSong()
+window.onload = function  (){
+       playSong()
+       
 }
 
-function playSong(){
-          song.src = data.song[currentSong]
-          let songTitle = document.getElementById("songTitle")
-          songTitle.textContent = data.title[currentSong]        
-          let img = document.getElementById("row1")
-          img.style.backgroundImage = "url (" + data.poster[currentSong] + ")"
-          let main = document.getElementById("main")
-          main.style.backgroundImage = "url (" + data.poster[currentSong] + ")"
-          song.play()
-        
+
+function  playSong(){
+           song.src = data.song[currentSong]
+           let songTitle = document.getElementById("songTitle")
+           songTitle.textContent = data.title[currentSong]
+           
+           let img = document.getElementById("row1")
+           img.style.backgroundImage = "url (" + data.poster[currentSong] + ") "
+           
+           let main = document.getElementById("main")
+           main.style.backgroundImage = "url (" + data.poster[currentSong] + ") "
+           song.play()                    
 }
 
 
 function  playOrPauseSong(){
+        let play  = document.getElementById("play")
 
-       let play = document.getElementById("play")
-       
-        
-        if (song.paused) {
+        if(song.paused){
                     song.play()
                     play.src = "images/pause.png"
         }else{
-            song.pause()
-            play.src =  "images/play-button-arrowhead.png"
+                    song.pause()
+                    play.src = "images/play-button-arrowhead.png"
         }
+        
 }
+
+
+
+
+
+
 
 
 
